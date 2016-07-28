@@ -95,7 +95,7 @@ function trilaterate(p1, p2, p3, return_middle)
 		};
 	}
 	
-	var ex, ey, ez, i, j, d, a, x, y, z, p4;
+	var ex, ey, ez, i, j, d, a, x, y, z, b, p4;
 	
 	ex = vector_divide(vector_subtract(p2, p1), norm(vector_subtract(p2, p1)));
 	
@@ -108,7 +108,17 @@ function trilaterate(p1, p2, p3, return_middle)
 	
 	x = (sqr(p1.r) - sqr(p2.r) + sqr(d)) / (2 * d);
 	y = (sqr(p1.r) - sqr(p3.r) + sqr(i) + sqr(j)) / (2 * j) - (i / j) * x;
-	z = Math.sqrt(sqr(p1.r) - sqr(x) - sqr(y));
+	
+	b = sqr(p1.r) - sqr(x) - sqr(y);
+	
+	// floating point math flaw in IEEE 754 standard
+	// see https://github.com/gheja/trilateration.js/issues/2
+	if (Math.abs(b) < 0.0000000001)
+	{
+		b = 0;
+	}
+	
+	z = Math.sqrt(b);
 	
 	// no solution found
 	if (isNaN(z))
