@@ -1,7 +1,9 @@
 # trilateration.js
 [![Build Status](https://travis-ci.org/gheja/trilateration.js.svg?branch=master)](https://travis-ci.org/gheja/trilateration.js)
 
-Trilateration in 3D space, implemented in JavaScript
+Trilateration in 3D space, implemented in JavaScript.
+
+[Try it here](https://gheja.github.io/trilateration.js/example.html)
 
 ## license
 MIT License
