@@ -140,4 +140,24 @@ function trilaterate(p1, p2, p3, return_middle)
 	}
 }
 
-module.exports = trilaterate;
+function toLonLat_epsgG4978(point) 
+{
+	let earthRadius = 6371;
+  	point.lon = Math.atan2(point.y, point.x) * (180 / Math.PI);
+  	point.lat = Math.asin(point.z / earthRadius / 1000) * (180 / Math.PI);
+
+  	return point;
+}
+
+function fromLonLat_epsg4978(point) 
+{
+  	let earthRadius = 6371;
+
+	point.x =earthRadius * 1000 * (Math.cos(point.lat * (Math.PI / 180)) * Math.cos(point.lon * (Math.PI / 180)));
+	point.y = earthRadius * 1000 * (Math.cos(point.lat * (Math.PI / 180)) * Math.sin(point.lon * (Math.PI / 180))); 
+	point.z = earthRadius * 1000 * Math.sin(point.lat * (Math.PI / 180));
+
+  	return point;
+}
+
+module.exports = { trilaterate, toLonLat_epsgG4978, fromLonLat_epsg4978 };
