@@ -1,5 +1,5 @@
 # trilateration.js
-[![Build Status](https://travis-ci.org/gheja/trilateration.js.svg?branch=master)](https://travis-ci.org/gheja/trilateration.js)
+[![Build Status](https://github.com/gheja/trilateration.js/actions/workflows/node.js.yml/badge.svg)](https://github.com/gheja/trilateration.js/actions/workflows/node.js.yml)
 
 Trilateration in 3D space, implemented in JavaScript.
 
