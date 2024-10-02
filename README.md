@@ -8,7 +8,7 @@ Trilateration in 3D space, implemented in JavaScript.
 ## license
 MIT License
 
-Copyright (c) 2015-2017 Gabor Heja
+Copyright (c) 2015-2024 Gabor Heja
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
