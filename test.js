@@ -1,4 +1,3 @@
-var expect = require("expect");
 var trilaterate = require("./trilateration");
 
 var assert = require('assert');
@@ -13,13 +12,13 @@ describe('Normal cases', function() {
 			
 			p4 = trilaterate(p1, p2, p3);
 			
-			expect(p4[0].x).toEqual(50);
-			expect(p4[0].y).toEqual(50);
-			expect(p4[0].z).toEqual(70.71067811865476);
+			assert.strictEqual(p4[0].x, 50);
+			assert.strictEqual(p4[0].y, 50);
+			assert.strictEqual(p4[0].z, 70.71067811865476);
 			
-			expect(p4[1].x).toEqual(50);
-			expect(p4[1].y).toEqual(50);
-			expect(p4[1].z).toEqual(-70.71067811865476);
+			assert.strictEqual(p4[1].x, 50);
+			assert.strictEqual(p4[1].y, 50);
+			assert.strictEqual(p4[1].z, -70.71067811865476);
 		});
 		
 		it('Second test', function() {
@@ -31,13 +30,13 @@ describe('Normal cases', function() {
 			
 			p4 = trilaterate(p1, p2, p3);
 			
-			expect(p4[0].x).toEqual(50);
-			expect(p4[0].y).toEqual(20.419601084501917);
-			expect(p4[0].z).toEqual(84.16079783099616);
+			assert.strictEqual(p4[0].x, 50);
+			assert.strictEqual(p4[0].y, 20.419601084501917);
+			assert.strictEqual(p4[0].z, 84.16079783099616);
 			
-			expect(p4[1].x).toEqual(50);
-			expect(p4[1].y).toEqual(79.58039891549808);
-			expect(p4[1].z).toEqual(-34.16079783099617);
+			assert.strictEqual(p4[1].x, 50);
+			assert.strictEqual(p4[1].y, 79.58039891549808);
+			assert.strictEqual(p4[1].z, -34.16079783099617);
 		});
 	});
 	
@@ -51,9 +50,9 @@ describe('Normal cases', function() {
 			
 			p4 = trilaterate(p1, p2, p3, true);
 			
-			expect(p4.x).toEqual(50);
-			expect(p4.y).toEqual(50);
-			expect(p4.z).toEqual(25);
+			assert.strictEqual(p4.x, 50);
+			assert.strictEqual(p4.y, 50);
+			assert.strictEqual(p4.z, 25);
 		});
 	});
 	
@@ -67,7 +66,7 @@ describe('Normal cases', function() {
 			
 			p4 = trilaterate(p1, p2, p3);
 			
-			expect(p4).toEqual(null);
+			assert.strictEqual(p4, null);
 		});
 		
 		it('Second test', function() {
@@ -79,7 +78,7 @@ describe('Normal cases', function() {
 			
 			p4 = trilaterate(p1, p2, p3, true);
 			
-			expect(p4).toEqual(null);
+			assert.strictEqual(p4, null);
 		});
 	});
 });
@@ -95,9 +94,9 @@ describe('Edge cases', function() {
 			
 			p4 = trilaterate(p1, p2, p3);
 			
-			expect(p4.x).toEqual(-1.5631940186722204e-13);
-			expect(p4.y).toEqual(-1.4210854715202004e-13);
-			expect(p4.z).toEqual(0);
+			assert.strictEqual(p4.x, -1.5631940186722204e-13);
+			assert.strictEqual(p4.y, -1.4210854715202004e-13);
+			assert.strictEqual(p4.z, 0);
 		});
 	});
 });
