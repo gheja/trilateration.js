@@ -2,7 +2,7 @@
   "name": "trilateration",
   "author": "Gabor Heja (gheja)",
   "description": "Trilateration in 3D space using 3 points.",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "homepage": "https://github.com/gheja/trilateration.js",
   "main": "trilateration.js",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "test": "mocha"
   },
   "engines": {
-    "node": ">= 6"
+    "node": ">= 12"
   },
   "dependencies": {
   },
